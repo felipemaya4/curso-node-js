@@ -1,4 +1,4 @@
-console.log(process.argv); // argumentos de entrada ireccion de ejecucion y direccion de ubicacion del archivo ejecutado
+ console.log(process.argv); // argumentos de entrada ireccion de ejecucion y direccion de ubicacion del archivo ejecutado
 
 //controlar proceso y su salida
 

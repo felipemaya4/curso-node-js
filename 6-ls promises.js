@@ -1,5 +1,6 @@
 
 const fs = require('node:fs/promises')
+// con promesas
 
 fs.readdir('.')
     .then(files =>{
