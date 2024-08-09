@@ -1,0 +1,25 @@
+{
+  "name": "clase2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-https.js",
+  "scripts": {
+    "dev:1": "nodemon 1-https.js",
+    "dev:2": "nodemon 2-routing.js",
+    "dev:3": "nodemon --watch 3-express.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "dependencies": {
+    "clase2": "file:",
+    "express": "4.19.2"
+  }
+}
