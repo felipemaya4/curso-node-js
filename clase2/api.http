@@ -1,9 +1,6 @@
 GET http://localhost:1234/pokemon/ditto
 
 ###
-GET http://localhost:1234/bebelindo.jpg
-
-###
 
 POST  http://localhost:1234/pokemon
 Content-Type: application/json
@@ -16,16 +13,5 @@ Content-Type: application/json
     ]
   }
 
-###
-PUT   http://localhost:1234/pokemon
-Content-Type: application/json
-
-  {
-    "name": "ditto",
-    "type": "normal",
-    "moves":[
-      "transform"
-    ]
-  }
 
 
