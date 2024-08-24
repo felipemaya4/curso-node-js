@@ -1,17 +1,22 @@
-import { MovieModel } from "../models/local-file-system/movie.js"
+
 import { validateMovie, validatePartialMovie } from "../schemas/movies.js" // validar las entradas de usuario
 export class MovieController {
-  static async getAll  (req, res) {
+
+  constructor({movieModel}){
+    this.movieModel = movieModel
+  }
+
+  getAll = async (req, res) => {
     const { genre } = req.query
-    const movies = await MovieModel.getAll({ genre })
+    const movies = await this.movieModel.getAll({ genre })
     
     res.json(movies)
   }
 
-  static async getById  (req, res) {
+  getById = async (req, res) => {
     const { id } = req.params
   
-    const movie = await MovieModel.getById({ id })
+    const movie = await this.movieModel.getById({ id })
   
     if (movie) return res.json(movie)
   
@@ -19,35 +24,35 @@ export class MovieController {
     
   }
 
-  static async create (req, res) {
+  create = async (req, res) => {
     const result = validateMovie(req.body) // validar informacion sea completa y de formato correcto
   
     if (!result.success) { // mensaje en caso de haber problemas con la validacion se envia mensaje especificando
       return res.status(400).json({ error:JSON.parse( result.error.message) })
     }
   
-    const newMovie = await MovieModel.create({input: result.data})
+    const newMovie = await this.movieModel.create({input: result.data})
     
     res.status(201).json(newMovie)
   }
 
-  static async update  (req, res ) {
+  update  = async (req, res) => {
 
     const { id } = req.params // identificador de la movie a modificar
     const result = validatePartialMovie(req.body) // se valida el dato sea correcto
   
     if (!result.success) return res.status(404).json({ error: JSON.parse(result.error.message)}) // si la validacion es incorrecta muestra el mensaje con el posible error
   
-    const updatedMovie = await MovieModel.update({id, input: result.data})
+    const updatedMovie = await this.movieModel.update({id, input: result.data})
     
     if (!updatedMovie) return res.status(404).json({ message: 'movie not found' }) // si el id es incorrecto o no existe
     
     return res.status(200).json(updatedMovie) // si es verdadero se espera la movie modificada
   }
 
-  static async delete (req, res) {
+  delete = async (req, res) => {
     const { id }= req.params
-    const result = await MovieModel.delete({id})
+    const result = await this.movieModel.delete({id})
   
     if (!result) return res.status(400).json({ message: 'movie not found'})
   

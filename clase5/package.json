@@ -1,9 +1,11 @@
 {
-  "name": "clase3",
+  "name": "clase5",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
   "scripts": {
+    "start:mysql": "node --watch server-mysql.js", 
+    "start:local": "node --watch server-local.js",
     "dev:1": "node --watch app.js"
   },
   "keywords": [],
@@ -11,10 +13,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.1",
     "clase3": "file:",
     "cors": "2.8.5",
     "express": "4.19.2",
     "mongodb": "6.8.0",
+    "mysql2": "^3.11.0",
     "servor": "^4.0.2",
     "zod": "3.23.8"
   }
