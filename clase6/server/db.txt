@@ -1,0 +1,10 @@
+Name:           comic-nightwing
+URL:            libsql://comic-nightwing-felipemaya4.turso.io
+ID:             2386da39-5f8e-4fd1-802c-eb8f115cf5ea
+Group:          default
+Version:        0.24.20
+Locations:      bog
+Size:           4.1 kB
+Archived:       No
+Bytes Synced:   0 B
+Is Schema:      No
