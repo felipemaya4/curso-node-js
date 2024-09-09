@@ -2,7 +2,7 @@ import express, { json } from 'express'
 // import movies  from './movies.json' with { type: 'json'} // for que sera oficial muy pronto
 import { createMovieRouter } from './routes/movies.js' // gestor de la ruta /movies
 import { corsMiddleware } from './middlewares/cors.js' // valida los datos de entrada sean correctos
-import { MovieModel } from './models/mysql/movie.js'
+//import { MovieModel } from './models/mysql/movie.js'
 
 export const createApp =({movieModel}) =>{
   const app = express()
